@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact - Bureautique & Informatique</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="contact">
+	<div id="scrollProgress" aria-hidden="true"></div>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="index.html" aria-label="Accueil">
+				<span class="brand-mark">BI</span>
+				<span class="brand-name">Bureautique & Informatique</span>
+			</a>
+			<button class="nav-toggle" aria-controls="site-nav" aria-expanded="false">Menu</button>
+			<nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+				<a href="index.html" class="nav-link">Accueil</a>
+				<a href="courses.html" class="nav-link">Cours</a>
+				<a href="programme.html" class="nav-link">Programme</a>
+				<a href="contact.html" class="nav-link active">Contact</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="page-hero reveal">
+			<div class="container">
+				<h1>Contact</h1>
+				<p>Une question sur les cours ou le programme ? Écrivez‑nous directement.</p>
+			</div>
+		</section>
+
+		<section class="list reveal">
+			<div class="container grid-3">
+				<div class="card">
+					<h3>Email direct</h3>
+					<p><a id="contactEmail" href="mailto:yassineaitelcaid.7@gmail.com">yassineaitelcaid.7@gmail.com</a></p>
+					<button class="btn" id="copyEmail">Copier l’adresse</button>
+				</div>
+				<div class="card">
+					<h3>Réseaux</h3>
+					<p>Suivez‑nous pour découvrir les nouveautés.</p>
+					<p><a href="#">Twitter</a> · <a href="#">LinkedIn</a> · <a href="#">YouTube</a></p>
+				</div>
+				<div class="card">
+					<h3>Formulaire</h3>
+					<form id="contactForm">
+						<label>Votre nom<br><input class="input" type="text" name="name" required></label><br><br>
+						<label>Votre email<br><input class="input" type="email" name="email" required></label><br><br>
+						<label>Message<br><textarea class="input" name="message" rows="5" required></textarea></label><br><br>
+						<button class="btn btn-primary" type="submit">Envoyer par email</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-inner">
+			<div class="footer-col">
+				<h4>À propos</h4>
+				<p>Des cours modernes et accessibles pour apprendre efficacement la bureautique et l’informatique.</p>
+			</div>
+			<div class="footer-col">
+				<h4>Liens</h4>
+				<a href="index.html">Accueil</a>
+				<a href="courses.html">Cours</a>
+				<a href="programme.html">Programme</a>
+			</div>
+			<div class="footer-col">
+				<h4>Contact</h4>
+				<a href="mailto:yassineaitelcaid.7@gmail.com">yassineaitelcaid.7@gmail.com</a>
+			</div>
+			<div class="footer-col">
+				<h4>Suivez-nous</h4>
+				<a href="#" aria-label="Twitter">Twitter</a>
+				<a href="#" aria-label="LinkedIn">LinkedIn</a>
+				<a href="#" aria-label="YouTube">YouTube</a>
+			</div>
+		</div>
+		<div class="container footer-bottom">
+			<p>© <span id="year"></span> Bureautique & Informatique – Créé par <strong>Yassine Ait El Caid</strong></p>
+		</div>
+	</footer>
+
+	<script src="assets/data.js"></script>
+	<script src="assets/app.js"></script>
+	<script>
+		(function(){
+			const form = document.getElementById('contactForm');
+			if(form){
+				form.addEventListener('submit', function(e){
+					e.preventDefault();
+					const data = new FormData(form);
+					const name = encodeURIComponent(data.get('name'));
+					const email = encodeURIComponent(data.get('email'));
+					const message = encodeURIComponent(data.get('message'));
+					const subject = `Message de ${name}`;
+					const body = `Email: ${email}%0D%0A%0D%0A${message}`;
+					window.location.href = `mailto:yassineaitelcaid.7@gmail.com?subject=${subject}&body=${body}`;
+				});
+			}
+			const copyBtn = document.getElementById('copyEmail');
+			if(copyBtn){
+				copyBtn.addEventListener('click', ()=>{
+					navigator.clipboard.writeText('yassineaitelcaid.7@gmail.com').then(()=>{
+						copyBtn.textContent = 'Copié !';
+						setTimeout(()=> copyBtn.textContent='Copier l’adresse', 1500);
+					});
+				});
+			}
+		})();
+	</script>
+</body>
+</html>
