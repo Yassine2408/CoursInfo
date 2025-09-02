@@ -198,6 +198,8 @@ img{max-width:100%;height:auto}
 .btn-primary:hover:after{animation:shimmer .9s ease}
 @keyframes shimmer{0%{left:-120%}100%{left:120%}}
 
+.btn[disabled]{opacity:.6;cursor:not-allowed}
+
 @media (max-width: 1024px){
 	.stats-grid{grid-template-columns:repeat(2,1fr)}
 	.testimonials-grid{grid-template-columns:1fr}

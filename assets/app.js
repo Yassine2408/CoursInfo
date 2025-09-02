@@ -5,7 +5,8 @@
 	const state = {
 		courses: [],
 		program: [],
-		progress: JSON.parse(localStorage.getItem('bi:progress') || '{}'),
+		progressPercent: JSON.parse(localStorage.getItem('bi:progress') || '{}'),
+		progressSections: JSON.parse(localStorage.getItem('bi:progressSections') || '{}'),
 	};
 
 	function setYear(){
@@ -101,6 +102,28 @@
 		apply();
 	}
 
+	function getCompletedMap(courseId){
+		return state.progressSections[courseId] && state.progressSections[courseId].completed
+			? state.progressSections[courseId].completed
+			: {};
+	}
+	function setCompletedMap(courseId, completed){
+		state.progressSections[courseId] = { completed };
+		localStorage.setItem('bi:progressSections', JSON.stringify(state.progressSections));
+	}
+
+	function computePercent(total, completed){
+		const count = Object.keys(completed).length;
+		return total === 0 ? 0 : Math.round((count / total) * 100);
+	}
+
+	function updateHeaderProgress(percent){
+		const span = $('.progress-bar > span');
+		const txt = $('.progress-text');
+		if(span) span.style.width = percent + '%';
+		if(txt) txt.textContent = percent + '%';
+	}
+
 	function renderCourseDetail(){
 		const root = $('#course-root');
 		if(!root) return;
@@ -111,14 +134,19 @@
 		$('#course-summary').textContent = course.summary;
 		$('#course-tags').innerHTML = course.tags.map(t=>`<span class="tag">${t}</span>`).join('');
 
-		const progress = state.progress[id] || 0;
+		const completed = getCompletedMap(course.id);
+		const percent = computePercent(course.content.length, completed);
+		state.progressPercent[course.id] = percent;
+		localStorage.setItem('bi:progress', JSON.stringify(state.progressPercent));
+
 		const headerProgress = document.createElement('div');
 		headerProgress.className = 'progress-wrap';
-		headerProgress.innerHTML = `<div class="progress-bar"><span style="width:${progress}%"></span></div><div class="progress-text">${progress}%</div>`;
+		headerProgress.innerHTML = `<div class="progress-bar"><span style="width:${percent}%"></span></div><div class="progress-text">${percent}%</div>`;
 		$('#course-summary').after(headerProgress);
 
 		root.innerHTML = '';
 		course.content.forEach((section, idx)=>{
+			const done = !!completed[idx];
 			const wrap = document.createElement('section');
 			wrap.className = 'module reveal';
 			wrap.innerHTML = `
@@ -127,7 +155,7 @@
 					<p>${section.explanation}</p>
 					${section.examples && section.examples.length ? `<ul>${section.examples.map(e=>`<li>${e}</li>`).join('')}</ul>` : ''}
 					${section.exercises && section.exercises.length ? `<div class="exercise"><strong>Exercices</strong><ul>${section.exercises.map(e=>`<li>${e}</li>`).join('')}</ul></div>` : ''}
-					<button class="btn" data-complete="${idx}">Marquer comme fait</button>
+					<button class="btn" data-complete="${idx}" ${done ? 'disabled' : ''}>${done ? 'Fait ✓' : 'Marquer comme fait'}</button>
 				</div>
 			`;
 			root.appendChild(wrap);
@@ -136,14 +164,15 @@
 		root.addEventListener('click',(e)=>{
 			const btn = e.target.closest('button[data-complete]');
 			if(!btn) return;
-			const total = course.content.length;
-			const done = Number(state.progress[id] || 0);
-			const inc = Math.round(100/total);
-			const next = Math.min(100, done + inc);
-			state.progress[id] = next;
-			localStorage.setItem('bi:progress', JSON.stringify(state.progress));
-			$('.progress-bar > span').style.width = next+'%';
-			$('.progress-text').textContent = next+'%';
+			const idx = Number(btn.getAttribute('data-complete'));
+			const now = { ...getCompletedMap(course.id), [idx]: true };
+			setCompletedMap(course.id, now);
+			btn.textContent = 'Fait ✓';
+			btn.setAttribute('disabled','true');
+			const pct = computePercent(course.content.length, now);
+			state.progressPercent[course.id] = pct;
+			localStorage.setItem('bi:progress', JSON.stringify(state.progressPercent));
+			updateHeaderProgress(pct);
 		});
 	}
 
