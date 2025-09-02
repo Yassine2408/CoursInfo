@@ -54,6 +54,11 @@ img{max-width:100%;height:auto}
 .hero.hero-centered .hero-actions{justify-content:center}
 .hero.hero-centered .hero-visual{display:none}
 
+/* Hero colored variant */
+.hero-colored{background:linear-gradient(135deg,#2563eb,#8b5cf6);color:#ffffff}
+.hero-colored .hero-text p{color:#ffffff}
+.hero-colored .btn-ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.4);color:#ffffff}
+
 /* Sections & cards */
 .highlights{padding:28px 0}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
