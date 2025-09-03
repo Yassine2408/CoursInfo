@@ -134,8 +134,8 @@
 		$('#course-summary').textContent = course.summary;
 		$('#course-tags').innerHTML = course.tags.map(t=>`<span class="tag">${t}</span>`).join('');
 
-		const completed = getCompletedMap(course.id);
-		const percent = computePercent(course.content.length, completed);
+		let completed = getCompletedMap(course.id);
+		let percent = computePercent(course.content.length, completed);
 		state.progressPercent[course.id] = percent;
 		localStorage.setItem('bi:progress', JSON.stringify(state.progressPercent));
 
@@ -155,7 +155,7 @@
 					<p>${section.explanation}</p>
 					${section.examples && section.examples.length ? `<ul>${section.examples.map(e=>`<li>${e}</li>`).join('')}</ul>` : ''}
 					${section.exercises && section.exercises.length ? `<div class="exercise"><strong>Exercices</strong><ul>${section.exercises.map(e=>`<li>${e}</li>`).join('')}</ul></div>` : ''}
-					<button class="btn" data-complete="${idx}" ${done ? 'disabled' : ''}>${done ? 'Fait ✓' : 'Marquer comme fait'}</button>
+					<button class="btn ${done ? 'is-done' : ''}" data-complete="${idx}">${done ? 'Fait ✓' : 'Marquer comme fait'}</button>
 				</div>
 			`;
 			root.appendChild(wrap);
@@ -165,13 +165,16 @@
 			const btn = e.target.closest('button[data-complete]');
 			if(!btn) return;
 			const idx = Number(btn.getAttribute('data-complete'));
-			const now = { ...getCompletedMap(course.id), [idx]: true };
-			setCompletedMap(course.id, now);
-			btn.textContent = 'Fait ✓';
-			btn.setAttribute('disabled','true');
-			const pct = computePercent(course.content.length, now);
+			// toggle
+			completed = getCompletedMap(course.id);
+			if(completed[idx]){ delete completed[idx]; } else { completed[idx] = true; }
+			setCompletedMap(course.id, completed);
+			const pct = computePercent(course.content.length, completed);
 			state.progressPercent[course.id] = pct;
 			localStorage.setItem('bi:progress', JSON.stringify(state.progressPercent));
+			// update UI
+			btn.textContent = completed[idx] ? 'Fait ✓' : 'Marquer comme fait';
+			btn.classList.toggle('is-done', !!completed[idx]);
 			updateHeaderProgress(pct);
 		});
 	}
