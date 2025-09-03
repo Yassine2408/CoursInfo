@@ -116,13 +116,106 @@ window.__BI_CONTENT__ = {
 		}
 	],
 	program: [
-		{ title: 'Prise en main & objectifs', objectives: 'Installer les outils, définir vos objectifs et découvrir l’interface des logiciels.', activities: ['Installer LibreOffice ou Microsoft 365', 'Prendre en main Word et Excel', 'Lister vos objectifs d’apprentissage'] },
-		{ title: 'Documents professionnels', objectives: 'Styles, listes, mises en page avancées.', activities: ['Créer un rapport avec styles', 'Numérotation automatique des titres', 'Exporter en PDF'] },
-		{ title: 'Données & formules', objectives: 'Tableaux structurés, formules essentielles et validation de données.', activities: ['Nettoyer un jeu de données', 'Formules SOMME, MOYENNE, SI', 'Listes déroulantes'] },
-		{ title: 'Visualisation & présentations', objectives: 'Graphiques, mises en forme conditionnelles et diaporamas.', activities: ['Créer 2 graphiques pertinents', 'Mettre en forme conditionnelle', 'Construire un plan de présentation'] },
-		{ title: 'Réseaux & sécurité', objectives: 'Bases réseaux, IP, sécurité du quotidien.', activities: ['Identifier votre IP', 'Simuler un phishing et le déjouer', 'Mettre à jour vos logiciels'] },
-		{ title: 'Programmation Python', objectives: 'Variables, boucles, fonctions, structures de données.', activities: ['Mini-projet: calculatrice', 'Lire/écrire des fichiers simples', 'Exercices de boucles'] },
-		{ title: 'Web de base', objectives: 'HTML sémantique, CSS Grid/Flex, accessibilité.', activities: ['Coder une page sémantique', 'Créer une grille responsive', 'Tester l’accessibilité clavier'] },
-		{ title: 'Consolidation & projet', objectives: 'Révision, QCM, projet de synthèse et plan de progression personnel.', activities: ['QCM de révision', 'Projet: mini-portfolio', 'Plan d’autoformation pour 4 semaines'] }
+		{
+			title: '1️⃣ Introduction à la bureautique & Windows',
+			objectives: '👉 Objectifs : découvrir l’environnement de travail et comprendre la logique des fichiers/dossiers.',
+			activities: [
+				'Prendre en main le Bureau, la barre des tâches, le menu démarrer',
+				'Manipuler les fenêtres (ouvrir, fermer, réduire, agrandir)',
+				'Utiliser l’Explorateur de fichiers',
+				'Créer, nommer, organiser et enregistrer des documents'
+			]
+		},
+		{
+			title: '2️⃣ Microsoft Word — Mise en forme simple',
+			objectives: '👉 Objectifs : rédiger un texte et le présenter de manière claire.',
+			activities: [
+				'Saisir et enregistrer un texte simple',
+				'Utiliser les styles basiques (gras, italique, souligné)',
+				'Modifier police, taille, couleur du texte',
+				'Aligner les paragraphes et gérer les espaces'
+			]
+		},
+		{
+			title: '3️⃣ Microsoft Word — Mise en page avancée',
+			objectives: '👉 Objectifs : structurer un document professionnel.',
+			activities: [
+				'Régler marges et orientation (portrait/paysage)',
+				'Ajouter en-têtes et pieds de page',
+				'Créer des listes à puces et numérotées',
+				'Insérer et mettre en forme des images',
+				'Créer un tableau simple'
+			]
+		},
+		{
+			title: '4️⃣ Microsoft Excel — Bases du tableur',
+			objectives: '👉 Objectifs : comprendre la logique d’un tableur et manipuler les données.',
+			activities: [
+				'Découvrir cellules, lignes et colonnes',
+				'Saisir et modifier des données',
+				'Réaliser des calculs simples (+, −, ×, ÷)',
+				'Mettre en forme un tableau (bordures, couleurs, centrage)'
+			]
+		},
+		{
+			title: '5️⃣ Microsoft Excel — Fonctions et graphiques',
+			objectives: '👉 Objectifs : analyser et représenter des données.',
+			activities: [
+				'Utiliser fonctions de base : SOMME, MOYENNE, MIN, MAX, SI',
+				'Nettoyer et valider des données',
+				'Appliquer une mise en forme conditionnelle',
+				'Créer graphiques (histogramme, camembert, courbes)'
+			]
+		},
+		{
+			title: '6️⃣ Microsoft PowerPoint — Bases',
+			objectives: '👉 Objectifs : apprendre à créer une présentation simple.',
+			activities: [
+				'Créer une nouvelle présentation',
+				'Ajouter du texte, des images, des formes',
+				'Appliquer thèmes et dispositions prédéfinies',
+				'Gérer l’ordre des diapositives'
+			]
+		},
+		{
+			title: '7️⃣ Microsoft PowerPoint — Présentations efficaces',
+			objectives: '👉 Objectifs : améliorer la qualité visuelle et l’impact.',
+			activities: [
+				'Ajouter transitions et animations',
+				'Insérer tableaux et graphiques',
+				'Utiliser SmartArt pour schémas visuels',
+				'Conseils pour une présentation claire et percutante'
+			]
+		},
+		{
+			title: '8️⃣ Internet & Communication',
+			objectives: '👉 Objectifs : naviguer efficacement et communiquer en ligne.',
+			activities: [
+				'Utiliser un navigateur web et rechercher efficacement',
+				'Identifier les sources fiables',
+				'Créer et utiliser une adresse email',
+				'Envoyer/recevoir un mail avec pièce jointe'
+			]
+		},
+		{
+			title: '9️⃣ Outils collaboratifs & Cloud',
+			objectives: '👉 Objectifs : découvrir le travail collaboratif en ligne.',
+			activities: [
+				'Introduction à Google Drive / OneDrive',
+				'Créer et partager un document en ligne',
+				'Gérer les droits d’accès et permissions',
+				'Travailler en temps réel avec d’autres utilisateurs'
+			]
+		},
+		{
+			title: '🔟 Projet final',
+			objectives: '👉 Objectifs : mobiliser toutes les compétences apprises.',
+			activities: [
+				'Rédiger un rapport formaté sous Word',
+				'Créer un tableau Excel avec formules + graphique',
+				'Concevoir une mini-présentation PowerPoint',
+				'Présenter le projet final devant le groupe (optionnel)'
+			]
+		}
 	]
 };
