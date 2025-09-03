@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Première séance — Bureautique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #6b7280;
+      --accent-from: #3b82f6;
+      --accent-to: #7c3aed;
+      --radius: 14px;
+      --shadow: 0 8px 28px rgba(2,6,23,0.06);
+      --maxw: 1000px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw);margin:30px auto;padding:20px}
+    header.hero{
+      border-radius:18px;
+      padding:34px;
+      color:#fff;
+      background: linear-gradient(135deg,var(--accent-from), var(--accent-to));
+      box-shadow: var(--shadow);
+      margin-bottom:22px;
+    }
+    header.hero h1{margin:0;font-size:22px}
+    header.hero p{margin:10px 0 0;color:rgba(255,255,255,0.92)}
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+      border:1px solid rgba(15,23,42,0.04);
+    }
+    .grid{display:grid;gap:14px}
+    h2{font-size:18px;margin:0 0 10px}
+    h3{font-size:16px;margin:0 0 8px}
+    p{margin:0 0 10px;color:var(--muted)}
+    ul{margin:8px 0 12px 20px;color:var(--muted)}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#f1f5f9;color:#0f172a;font-weight:600;font-size:13px}
+    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+    @media print{
+      body{background:white}
+      header.hero{box-shadow:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>Première séance — Introduction à la bureautique</h1>
+      <p>Objectifs : comprendre la bureautique, prendre en main Windows, créer et organiser des fichiers.</p>
+    </header>
+
+    <section class="card">
+      <h2>🎯 Objectifs de la séance</h2>
+      <ul>
+        <li>Comprendre ce qu'est la bureautique et pourquoi c'est utile.</li>
+        <li>Se repérer dans l'environnement Windows (Bureau, barre des tâches, menus).</li>
+        <li>Créer, nommer et enregistrer des fichiers dans des dossiers organisés.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>📘 Déroulement de la séance (env. 60 min)</h2>
+      <h3>1. Introduction (10 min)</h3>
+      <p>Définition de la bureautique et exemples concrets : Word, Excel, PowerPoint, mail, cloud.</p>
+
+      <h3>2. Découverte de Windows (20 min)</h3>
+      <ul>
+        <li>Présentation du Bureau, de la barre des tâches et du menu démarrer.</li>
+        <li>Fenêtres : réduire, agrandir, fermer.</li>
+        <li>Exercice : ouvrir Bloc-notes/WordPad, écrire une phrase, fermer sans enregistrer.</li>
+      </ul>
+
+      <h3>3. Gestion des fichiers (20 min)</h3>
+      <ul>
+        <li>Ouvrir l'Explorateur de fichiers, créer un dossier (Bureautique → Séance 1).</li>
+        <li>Créer/renommer/copier/coller/supprimer.</li>
+        <li>Exercice : créer un fichier texte (3 phrases), enregistrer sous <code>mon_premier_doc.docx</code> dans le dossier Séance 1.</li>
+      </ul>
+
+      <h3>4. Conclusion & mini-quiz (10 min)</h3>
+      <p>Récapitulatif + questions : qu’est-ce qu’un fichier/dossier ? Différence entre fermer et réduire une fenêtre ?</p>
+    </section>
+
+    <section class="card">
+      <h2>📝 Exercices (en classe)</h2>
+      <ol>
+        <li>Créer sur le Bureau un dossier <strong>Bureautique</strong>, puis <strong>Séance 1</strong> à l'intérieur.</li>
+        <li>Ouvrir Bloc-notes/WordPad, écrire trois phrases sur soi, enregistrer en <code>mon_premier_doc.docx</code> dans <strong>Séance 1</strong>.</li>
+        <li>Renommer le fichier, puis le copier et le coller ailleurs.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>📌 Devoir (facultatif)</h2>
+      <p>Créer un dossier <strong>Travail personnel</strong> sur le Bureau et y enregistrer un fichier <strong>mes_notes.txt</strong> contenant un résumé de la séance (3–5 lignes).</p>
+    </section>
+
+    <footer>
+      © Première séance Bureautique — Contenu pédagogique
+    </footer>
+  </main>
+</body>
+</html>
