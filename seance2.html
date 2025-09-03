@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Première séance — Bureautique</title>
+  <title>Deuxième séance — Bureautique (Word)</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
   <style>
@@ -12,9 +12,9 @@
       --card: #ffffff;
       --text: #0f172a;
       --muted: #6b7280;
-      --accent-from: #3b82f6;
-      --accent-to: #7c3aed;
-      --radius: 14px;
+      --accent-from: #10b981;
+      --accent-to: #14b8a6;
+      --radius: 16px;
       --shadow: 0 8px 28px rgba(2,6,23,0.06);
       --maxw: 1000px;
     }
@@ -23,14 +23,14 @@
     .wrap{max-width:var(--maxw);margin:30px auto;padding:20px}
     header.hero{
       border-radius:18px;
-      padding:34px;
+      padding:48px;
       color:#fff;
       background: linear-gradient(135deg,var(--accent-from), var(--accent-to));
       box-shadow: var(--shadow);
       margin-bottom:22px;
     }
-    header.hero h1{margin:0;font-size:22px}
-    header.hero p{margin:10px 0 0;color:rgba(255,255,255,0.92)}
+    header.hero h1{margin:0 0 6px;font-size:clamp(28px,4.2vw,40px);line-height:1.1;letter-spacing:-.015em}
+    header.hero p{margin:10px 0 0;color:rgba(255,255,255,0.92);font-size:clamp(15px,2.2vw,18px)}
     .card{
       background:var(--card);
       border-radius:var(--radius);
@@ -38,14 +38,17 @@
       box-shadow:var(--shadow);
       margin-bottom:18px;
       border:1px solid rgba(15,23,42,0.04);
+      transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease
     }
-    .grid{display:grid;gap:14px}
+    .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,24,40,.1);border-color:#dbe3f0}
     h2{font-size:18px;margin:0 0 10px}
     h3{font-size:16px;margin:0 0 8px}
     p{margin:0 0 10px;color:var(--muted)}
     ul{margin:8px 0 12px 20px;color:var(--muted)}
+    ol{margin:8px 0 12px 20px;color:var(--muted)}
     .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#f1f5f9;color:#0f172a;font-weight:600;font-size:13px}
     footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
     @media print{
       body{background:white}
       header.hero{box-shadow:none}
@@ -72,54 +75,68 @@
   </header>
   <main class="wrap">
     <header class="hero">
-      <h1>Première séance — Introduction à la bureautique</h1>
-      <p>Objectifs : comprendre la bureautique, prendre en main Windows, créer et organiser des fichiers.</p>
+      <h1>Deuxième séance — Microsoft Word (Mise en forme de texte)</h1>
+      <p>Objectifs : découvrir Word, apprendre la mise en forme du texte, enregistrer et préparer un document simple.</p>
     </header>
 
     <section class="card">
       <h2>🎯 Objectifs de la séance</h2>
       <ul>
-        <li>Comprendre ce qu'est la bureautique et pourquoi c'est utile.</li>
-        <li>Se repérer dans l'environnement Windows (Bureau, barre des tâches, menus).</li>
-        <li>Créer, nommer et enregistrer des fichiers dans des dossiers organisés.</li>
+        <li>Découvrir l’interface de Microsoft Word.</li>
+        <li>Saisir et modifier du texte.</li>
+        <li>Appliquer des mises en forme (gras, italique, souligné, police, taille, couleur).</li>
+        <li>Enregistrer un document dans un dossier organisé.</li>
       </ul>
     </section>
 
     <section class="card">
       <h2>📘 Déroulement de la séance (env. 60 min)</h2>
-      <h3>1. Introduction (10 min)</h3>
-      <p>Définition de la bureautique et exemples concrets : Word, Excel, PowerPoint, mail, cloud.</p>
+      <h3>1. Introduction (5 min)</h3>
+      <p>Présentation rapide de Word : logiciel de traitement de texte, indispensable pour rédiger rapports, lettres, CV, etc.</p>
 
-      <h3>2. Découverte de Windows (20 min)</h3>
+      <h3>2. Interface de Word (10 min)</h3>
       <ul>
-        <li>Présentation du Bureau, de la barre des tâches et du menu démarrer.</li>
-        <li>Fenêtres : réduire, agrandir, fermer.</li>
-        <li>Exercice : ouvrir Bloc-notes/WordPad, écrire une phrase, fermer sans enregistrer.</li>
+        <li>Ruban (menus et onglets : Accueil, Insertion, Mise en page…)</li>
+        <li>Zone de texte (la page blanche)</li>
+        <li>Barre d’état (nombre de pages, mots, etc.)</li>
       </ul>
 
-      <h3>3. Gestion des fichiers (20 min)</h3>
+      <h3>3. Saisie et mise en forme de texte (25 min)</h3>
       <ul>
-        <li>Ouvrir l'Explorateur de fichiers, créer un dossier (Bureautique → Séance 1).</li>
-        <li>Créer/renommer/copier/coller/supprimer.</li>
-        <li>Exercice : créer un fichier texte (3 phrases), enregistrer sous <code>mon_premier_doc.docx</code> dans le dossier Séance 1.</li>
+        <li>Écrire un petit texte (présentation personnelle).</li>
+        <li>Utiliser le gras, l’italique et le souligné.</li>
+        <li>Changer police, taille, couleur.</li>
+        <li>Aligner le texte (gauche, centré, droite, justifié).</li>
       </ul>
 
-      <h3>4. Conclusion & mini-quiz (10 min)</h3>
-      <p>Récapitulatif + questions : qu’est-ce qu’un fichier/dossier ? Différence entre fermer et réduire une fenêtre ?</p>
+      <h3>4. Sauvegarde du document (10 min)</h3>
+      <p>Enregistrer le document dans <strong>Bureautique → Séance 2</strong> sous le nom <code>exercice_word.docx</code>.</p>
+
+      <h3>5. Conclusion & mini-quiz (10 min)</h3>
+      <p>Questions rapides : Qu’est-ce qu’un traitement de texte ? Quelle est la différence entre gras et souligné ? Pourquoi faut-il toujours enregistrer son document ?</p>
     </section>
 
     <section class="card">
       <h2>📝 Exercices (en classe)</h2>
       <ol>
-        <li>Créer sur le Bureau un dossier <strong>Bureautique</strong>, puis <strong>Séance 1</strong> à l'intérieur.</li>
-        <li>Ouvrir Bloc-notes/WordPad, écrire trois phrases sur soi, enregistrer en <code>mon_premier_doc.docx</code> dans <strong>Séance 1</strong>.</li>
-        <li>Renommer le fichier, puis le copier et le coller ailleurs.</li>
+        <li>Créer un dossier <strong>Séance 2</strong> dans le dossier Bureautique.</li>
+        <li>Dans Word, taper un court texte (5 lignes sur soi-même).</li>
+        <li>Mettre en forme : un mot en gras, un mot en italique, un mot souligné.</li>
+        <li>Changer la police et la taille d’un paragraphe.</li>
+        <li>Aligner le titre au centre, le reste du texte justifié.</li>
+        <li>Enregistrer dans <code>exercice_word.docx</code>.</li>
       </ol>
     </section>
 
     <section class="card">
       <h2>📌 Devoir (facultatif)</h2>
-      <p>Créer un dossier <strong>Travail personnel</strong> sur le Bureau et y enregistrer un fichier <strong>mes_notes.txt</strong> contenant un résumé de la séance (3–5 lignes).</p>
+      <p>Rédiger dans Word une petite lettre de 8–10 lignes à un ami (objet libre). Appliquer :</p>
+      <ul>
+        <li>Un titre centré et en gras.</li>
+        <li>Du texte justifié.</li>
+        <li>Au moins un mot en couleur.</li>
+      </ul>
+      <p>Enregistrer sous <code>lettre_personnelle.docx</code> dans le dossier <strong>Séance 2</strong>.</p>
     </section>
 
   </main>

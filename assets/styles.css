@@ -79,9 +79,11 @@ img{max-width:100%;height:auto}
 .site-footer{margin-top:auto;background:linear-gradient(90deg,#2563eb,#8b5cf6);color:#ffffff}
 .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px;padding:28px 0}
 .footer-col h4{margin:0 0 8px 0}
+.site-footer p{color:rgba(255,255,255,.92)}
 .footer-col a{display:block;color:rgba(255,255,255,.9);text-decoration:none;padding:4px 0}
 .footer-col a:hover{color:#ffffff}
 .footer-bottom{text-align:center;padding:10px 0;color:rgba(255,255,255,.9);background:transparent;border-top:1px solid rgba(255,255,255,.18)}
+.footer-bottom p{color:rgba(255,255,255,.9)}
 .footer-bottom a{color:#ffffff;text-decoration:underline}
 
 /* Forms & tags */

@@ -3,13 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Programme - Bureautique & Informatique</title>
+	<title>Séances - Bureautique & Informatique</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/styles.css">
 </head>
-<body data-page="programme">
+<body data-page="seances">
 	<div id="scrollProgress" aria-hidden="true"></div>
 	<header class="site-header">
 		<div class="container header-inner">
@@ -21,8 +21,8 @@
 			<nav id="site-nav" class="site-nav" aria-label="Navigation principale">
 				<a href="index.html" class="nav-link">Accueil</a>
 				<a href="courses.html" class="nav-link">Cours</a>
-				<a href="programme.html" class="nav-link active">Programme</a>
-				<a href="seances.html" class="nav-link">Séances</a>
+				<a href="programme.html" class="nav-link">Programme</a>
+				<a href="seances.html" class="nav-link active">Séances</a>
 				<a href="contact.html" class="nav-link">Contact</a>
 			</nav>
 		</div>
@@ -31,14 +31,21 @@
 	<main>
 		<section class="page-hero reveal">
 			<div class="container">
-				<h1>Programme de travail</h1>
-				<p>Un plan sur 8 semaines, modulable selon votre rythme. Chaque semaine propose des objectifs et des activités.</p>
+				<h1>Séances</h1>
+				<p>Accédez rapidement aux supports des séances.</p>
 			</div>
 		</section>
 
-		<section class="timeline reveal">
-			<div class="container">
-				<div id="timeline-root" class="step-grid"></div>
+		<section class="list reveal">
+			<div class="container grid-3">
+				<a class="course-btn variant-1" href="bureautique1.html">
+					<div class="title">Séance 1 — Introduction à la bureautique</div>
+					<div class="sub">Windows · fichiers · dossiers</div>
+				</a>
+				<a class="course-btn variant-2" href="seance2.html">
+					<div class="title">Séance 2 — Microsoft Word</div>
+					<div class="sub">Mise en forme · enregistrement</div>
+				</a>
 			</div>
 		</section>
 	</main>
@@ -76,3 +83,5 @@
 	<script src="assets/app.js"></script>
 </body>
 </html>
+
+
