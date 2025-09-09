@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Troisième séance — Word avancé (Mémoire / Thèse)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    :root{
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #6b7280;
+      --accent-from: #2563eb;
+      --accent-to: #8b5cf6;
+      --radius: 16px;
+      --shadow: 0 8px 28px rgba(2,6,23,0.06);
+      --maxw: 1000px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw);margin:30px auto;padding:20px}
+    header.hero{
+      border-radius:18px;
+      padding:48px;
+      color:#fff;
+      background: linear-gradient(135deg,var(--accent-from), var(--accent-to));
+      box-shadow:var(--shadow);
+      margin-bottom:22px;
+    }
+    header.hero h1{margin:0 0 6px;font-size:clamp(28px,4.2vw,40px);line-height:1.1;letter-spacing:-.015em}
+    header.hero p{margin:10px 0 0;color:rgba(255,255,255,0.92);font-size:clamp(15px,2.2vw,18px)}
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+      border:1px solid rgba(15,23,42,0.04);
+      transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease
+    }
+    .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,24,40,.1);border-color:#dbe3f0}
+    h2{font-size:18px;margin:0 0 10px}
+    h3{font-size:16px;margin:0 0 8px}
+    p{margin:0 0 10px;color:var(--muted)}
+    ul{margin:8px 0 12px 20px;color:var(--muted)}
+    ol{margin:8px 0 12px 20px;color:var(--muted)}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    td,th{padding:8px;border:1px solid #eef2f7;font-size:.95rem}
+    .small{font-size:.9rem;color:var(--muted)}
+  </style>
+</head>
+<body data-page="seances">
+  <div id="scrollProgress" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Accueil">
+        <span class="brand-mark">BI</span>
+        <span class="brand-name">Bureautique & Informatique</span>
+      </a>
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="courses.html" class="nav-link">Cours</a>
+        <a href="programme.html" class="nav-link">Programme</a>
+        <a href="seances.html" class="nav-link active">Séances</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <header class="hero">
+      <h1>Troisième séance — Word avancé (Mémoire / Thèse)</h1>
+      <p>Objectifs : maîtriser styles, tables des matières, références et préparation d’un document long.</p>
+    </header>
+
+    <section class="card" id="objectifs">
+      <h2>🎯 Objectifs</h2>
+      <ul>
+        <li>Maîtriser les <strong>styles</strong> et les modèles pour un document long (consistance & rapidité).</li>
+        <li>Créer et automatiser une <strong>table des matières</strong>, table des figures, et index.</li>
+        <li>Gérer les <strong>citations, bibliographie</strong> (Zotero/Mendeley) et notes de bas de page.</li>
+        <li>Numérotation des chapitres, légendes (figures/tableaux) et références croisées.</li>
+        <li>Utiliser <strong>suivi des modifications, commentaires</strong> et comparer des versions.</li>
+        <li>Préparer le document pour remise : en-têtes/pieds, pagination, marges, export PDF conforme.</li>
+      </ul>
+      <div class="small">Session ciblée pour documents longs (mémoire/thèse).</div>
+    </section>
+
+    <section class="card" id="materiel">
+      <h2>🧰 Matériel requis</h2>
+      <ul>
+        <li>Ordinateur avec Microsoft Word (idéal : version récente — Word 2016, 2019, 365).</li>
+        <li>Références bibliographiques (BibTex / RIS) si vous utilisez Zotero/Mendeley.</li>
+        <li>Exemples d'images/figures et tableaux (formats : PNG/JPG, tableaux Excel importés).</li>
+        <li>Consignes de mise en page de l'université (si disponibles).</li>
+      </ul>
+    </section>
+
+    <section class="card" id="deroulement">
+      <h2>📘 Déroulement (atelier pratique)</h2>
+      <ol>
+        <li><strong>Intro rapide (10 min)</strong>
+          <div class="small">Pourquoi utiliser styles / modèles — gain de temps et conformité.</div>
+        </li>
+
+        <li><strong>Créer et utiliser les Styles (30–40 min)</strong>
+          <ul>
+            <li>Définir : Titre 1 / Titre 2 / Titre 3 / Corps de texte / Citation / Légende.</li>
+            <li>Modifier un style (police, taille, espacement, retrait) et appliquer à tout le doc.</li>
+            <li>Créer un modèle (.dotx) pour réutiliser la mise en page (en-tête, pied, numérotation).</li>
+          </ul>
+        </li>
+
+        <li><strong>Numérotation des chapitres et sections (15 min)</strong>
+          <div class="small">Numérotation multilevel : liage du style Titre 1 > Numérotation chapitres (Ex : 1, 1.1, 1.1.1).</div>
+        </li>
+
+        <li><strong>Table des matières automatique (15 min)</strong>
+          <ul>
+            <li>Insérer la TOC basée sur les styles.</li>
+            <li>Mettre à jour la TOC après modifications.</li>
+            <li>Personnaliser niveaux et formats (sans casser le style).</li>
+          </ul>
+        </li>
+
+        <li><strong>Figure/Table: légendes, numérotation et références croisées (20 min)</strong>
+          <ul>
+            <li>Utiliser Insérer > Légende pour figures et tableaux.</li>
+            <li>Insérer références croisées (elles suivent la renumérotation si vous bougez les éléments).</li>
+            <li>Créer une Table des figures (tableau des illustrations).</li>
+          </ul>
+        </li>
+
+        <li><strong>Notes de bas de page, notes de fin & index (20 min)</strong>
+          <ul>
+            <li>Différence pied de page vs fin de document.</li>
+            <li>Créer un index (marquer les entrées et générer l’index).</li>
+          </ul>
+        </li>
+
+        <li><strong>Références bibliographiques via gestionnaires (Zotero / Mendeley) (25 min)</strong>
+          <ul>
+            <li>Installer le plugin (si disponible) → insérer citation → générer bibliographie.</li>
+            <li>Choisir le style bibliographique (APA, Chicago, IEEE...) selon la fac.</li>
+            <li>Astuce : garder la base Zotero/Mendeley propre (doublons, champs corrects).</li>
+          </ul>
+        </li>
+
+        <li><strong>Suivi des modifications & commentaires (15 min)</strong>
+          <ul>
+            <li>Activer "Suivi des modifications", accepter/refuser, utiliser les commentaires pour encadrant.</li>
+            <li>Comparer des documents et fusionner (utile pour versions corrigées par encadrant).</li>
+          </ul>
+        </li>
+
+        <li><strong>Styles de citation inline et insertion d'équations (10–15 min)</strong>
+          <ul>
+            <li>Utiliser l'éditeur d'équations Word (si la thèse contient math/équations).</li>
+            <li>Formatage cohérent des citations inline dans le texte.</li>
+          </ul>
+        </li>
+
+        <li><strong>Vérifications finales & export (15 min)</strong>
+          <ul>
+            <li>Vérifier marges, pagination (recto/verso si demandé), en-têtes/pieds différents pour pages impaires/paire.</li>
+            <li>Utiliser "Inspecter le document" pour métadonnées indésirables.</li>
+            <li>Exporter en PDF/A si l'université le demande, ou PDF standard en vérifiant signets (TOC sauvegardé).</li>
+          </ul>
+        </li>
+      </ol>
+      <div class="small">Total atelier : environ 3 h — modulable selon le public.</div>
+    </section>
+
+    <section class="card" id="exercices">
+      <h2>📝 Exercices pratiques (en classe)</h2>
+      <ol>
+        <li>
+          <strong>Styles & TOC</strong> — document brut (3 pages). Créer styles (Titre1/2/Corps) et générer une table des matières correcte.
+        </li>
+        <li>
+          <strong>Légendes & Références croisées</strong> — insérer 3 images et 2 tableaux, ajouter légendes et insérer au moins 4 références croisées (ex : « voir Fig. 2 »).
+        </li>
+        <li>
+          <strong>Bibliographie</strong> — importer 5 références et insérer 5 citations; générer la bibliographie au style demandé (ex : APA).
+        </li>
+      </ol>
+    </section>
+
+    <section class="card" id="devoir">
+      <h2>📌 Devoir (à rendre)</h2>
+      <p>Objectif : produire un <strong>modèle de chapitre formaté</strong> réutilisable.</p>
+      <ol>
+        <li>Créer un document Word nommé <code>Chapitre1_TitreVotreSujet.docx</code> contenant :</li>
+        <ul>
+          <li>Titre du chapitre (style Titre 1), au moins deux sous-titres (Titre 2) et un sous-sous-titre (Titre 3).</li>
+          <li>Au moins 2 figures (avec légendes) et 1 tableau (avec légende).</li>
+          <li>5 citations insérées via citation manager (ou manuelles si nécessaire).</li>
+          <li>Table des matières locale et une page de références / bibliographie.</li>
+        </ul>
+        <li>Exporter en PDF et vérifier la TOC cliquable et la cohérence des références.</li>
+        <li>Remettre : fichier .docx + .pdf</li>
+      </ol>
+      <div class="small">Critères d'évaluation : cohérence des styles, TOC correcte, légendes/références fonctionnelles, bibliographie bien formatée.</div>
+    </section>
+
+    <section class="card" id="astuces">
+      <h2>✅ Astuce rapide & checklist avant remise</h2>
+      <table>
+        <tr><th>Vérifier</th><th>Pourquoi</th></tr>
+        <tr><td>Styles cohérents</td><td>Facilite mise à jour et TOC automatique</td></tr>
+        <tr><td>Numérotation des figures/tableaux</td><td>Références croisées fiables</td></tr>
+        <tr><td>Métadonnées & infos perso</td><td>Retirer infos personnelles avant remise</td></tr>
+        <tr><td>PDF final (signets + lecture)</td><td>Respect des consignes et navigation</td></tr>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>À propos</h4>
+        <p>Des cours modernes et accessibles pour apprendre efficacement la bureautique et l’informatique.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Liens</h4>
+        <a href="index.html">Accueil</a>
+        <a href="courses.html">Cours</a>
+        <a href="programme.html">Programme</a>
+        <a href="seances.html">Séances</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:yassineaitelcaid.7@gmail.com">yassineaitelcaid.7@gmail.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Suivez-nous</h4>
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Bureautique & Informatique – Créé par <strong>Yassine Ait El Caid</strong></p>
+    </div>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
